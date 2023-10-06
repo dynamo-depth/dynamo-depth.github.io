@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Fixing Unsupervised Depth Estimation for Dynamical Scenes">
+  <meta property="og:title" content="Fixing Unsupervised Depth Estimation for Dynamical Scenes">
+  <meta property="og:description" content="Fixing Unsupervised Depth Estimation for Dynamical Scenes">
+  <meta property="og:image" content="https://dynamo-depth.github.io/static/images/pipeline.jpg">
+  <meta property="twitter:title" content="Fixing Unsupervised Depth Estimation for Dynamical Scenes">
+  <meta property="twitter:description" content="Fixing Unsupervised Depth Estimation for Dynamical Scenes">
+  <meta property="twitter:image" content="https://dynamo-depth.github.io/static/images/pipeline.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="monocular, depth estimation, dynamical scenes, motion segmentation, self-supervised">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fixing Unsupervised Depth Estimation for Dynamical Scenes</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G62L2JMGEW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-G62L2JMGEW');
+  </script>
+  <!-- Google tag (gtag.js) -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<!-- Title/Authors/Institutions/Links -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <!-- Title -->
+          <h1 class="title is-1 publication-title">Fixing Unsupervised Depth Estimation for Dynamical Scenes</h1>
+          <h2 class="title is-size-3">NeruIPS 2023</h2>
+          <!-- Title -->
+          
+          <!-- Authors -->
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">
+              <a href="https://yihongsun.github.io" target="_blank">Yihong Sun</a>,</span>
+            <span class="author-block">
+              <a href="https://www.cs.cornell.edu/~bharathh/" target="_blank">Bharath Hariharan</a></span>
+          </div>
+          <!-- Authors -->
+          
+          <!-- Institutions -->
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">Cornell University</span>
+          </div>
+          <!-- Institutions -->
+
+          <!-- PDF Links -->
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://dynamo-depth.github.io" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper (Coming Soon)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://dynamo-depth.github.io" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv (Coming Soon)</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://dynamo-depth.github.io" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video (Coming Soon)</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/YihongSun/Dynamo" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+          <!-- PDF Links -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Title/Authors/Institutions/Links -->
+
+
+<!-- Teaser Videos -->
+<section class="hero teaser">
+  <div class="container"> 
+    <div class="hero-body">
+
+      <video id="teaser1" onclick="this.paused ? this.play() : this.pause(); arguments[0].preventDefault();" autoplay muted loop playsinline width="100%"><source src="./static/videos/Fig3_1.mp4" type="video/mp4">
+      </video>
+      <video id="teaser2" onclick="this.paused ? this.play() : this.pause(); arguments[0].preventDefault();" autoplay muted loop playsinline width="100%"><source src="./static/videos/Fig3_3.mp4" type="video/mp4">
+      </video>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column"><h2 class="subtitle has-text-centered is-6">Input Frames</h2></div>
+        <div class="column"><h2 class="subtitle has-text-centered is-6">Monocular Depth</h2></div>
+        <div class="column"><h2 class="subtitle has-text-centered is-6">Rigid Flow</h2></div>
+        <div class="column"><h2 class="subtitle has-text-centered is-6">Independent Flow</h2></div>
+        <div class="column"><h2 class="subtitle has-text-centered is-6">Motion Segmentation</h2></div>
+      </div>
+
+      <h2 class="subtitle has-text-centered">Dynamo learns from unlabeled video sequences and predicts monocular depth, rigid flow, independent flow, and motion segmentation.</h2>
+    </div>
+  </div>
+</section>
+<!-- Teaser Videos -->
+
+
+<!-- Main Body -->
+<section class="section">
+  <div class="container">
+    <!-- Abstract -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Unsupervised monocular depth estimation techniques have demonstrated encouraging results but typically assume that the scene is static. 
+            These techniques suffer when trained on dynamical scenes, where apparent object motion can equally be explained by hypothesizing the object's independent motion, or by altering its depth. 
+            This ambiguity causes depth estimators to predict erroneous depth for moving objects.
+          </p>
+          <p>
+            To resolve this issue, we introduce Dynamo, an unifying approach that disambiguates dynamical motion by jointly learning monocular depth, 3D independent flow field, and motion segmentation from unlabeled monocular videos.
+            Specifically, we offer our key insight that a good initial estimation of motion segmentation is sufficient for jointly learning depth and independent motion despite the fundamental underlying ambiguity.
+            Our proposed method achieves state-of-the-art performance on monocular depth estimation on Waymo Open and nuScenes Dataset with significant improvement in the depth of moving objects. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract -->
+
+    &nbsp;
+
+    <!-- Methodology -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Methodology</h2>
+        <img class="pipeline" src="./static/images/pipeline.jpg" alt="">
+        <h2 class="subtitle has-text-centered">
+          An overview of the proposed unsupervised learning framework.
+        </h2>
+      </div>
+    </div>
+    <!--/ Methodology -->
+
+    &nbsp;
+
+    <!-- Paper video -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video (Coming Soon)</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/NpEaa2P7qZI?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video -->
+  </div>
+</section>
+<!-- Main Body -->
+
+
+<!-- Results -->
+<section class="section">
+  <div class="container"> 
+    <div class="hero-body">
+      <div class="column is-centered has-text-centered">
+        <h2 class="title is-3">Quantitative Results (Click to Play & Pause)</h2>
+      </div>
+    </div>
+
+    <video id="waymo1" onclick="this.paused ? this.play() : this.pause(); arguments[0].preventDefault();" muted loop playsinline width="100%">
+      <source src="./static/videos/Fig3_2.mp4" type="video/mp4">
+    </video>
+    <video id="waymo1" onclick="this.paused ? this.play() : this.pause(); arguments[0].preventDefault();" muted loop playsinline width="100%">
+      <source src="./static/videos/Supp_1.mp4" type="video/mp4">
+    </video>
+    <video id="waymo2" onclick="this.paused ? this.play() : this.pause(); arguments[0].preventDefault();" muted loop playsinline width="100%">
+      <source src="./static/videos/Supp_2.mp4" type="video/mp4">
+    </video>
+    <video id="waymo3" onclick="this.paused ? this.play() : this.pause(); arguments[0].preventDefault();" muted loop playsinline width="100%">
+      <source src="./static/videos/Supp_3.mp4" type="video/mp4">
+    </video>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column"><h2 class="subtitle has-text-centered is-6">Input Frames</h2></div>
+      <div class="column"><h2 class="subtitle has-text-centered is-6">Monocular Depth</h2></div>
+      <div class="column"><h2 class="subtitle has-text-centered is-6">Rigid Flow</h2></div>
+      <div class="column"><h2 class="subtitle has-text-centered is-6">Independent Flow</h2></div>
+      <div class="column"><h2 class="subtitle has-text-centered is-6">Motion Segmentation</h2></div>
+    </div>
+
+    <h2 class="subtitle has-text-centered">Additional results on Waymo Open Dataset.</h2>
+
+    <div style="margin-bottom: 70px;"></div>
+
+    <video id="waymo1" onclick="this.paused ? this.play() : this.pause(); arguments[0].preventDefault();" muted loop playsinline width="100%">
+      <source src="./static/videos/Fig3_4.mp4" type="video/mp4">
+    </video>
+    <video id="waymo1" onclick="this.paused ? this.play() : this.pause(); arguments[0].preventDefault();" muted loop playsinline width="100%">
+      <source src="./static/videos/Supp_4.mp4" type="video/mp4">
+    </video>
+    <video id="waymo2" onclick="this.paused ? this.play() : this.pause(); arguments[0].preventDefault();" muted loop playsinline width="100%">
+      <source src="./static/videos/Supp_5.mp4" type="video/mp4">
+    </video>
+    <video id="waymo3" onclick="this.paused ? this.play() : this.pause(); arguments[0].preventDefault();" muted loop playsinline width="100%">
+      <source src="./static/videos/Supp_6.mp4" type="video/mp4">
+    </video>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column"><h2 class="subtitle has-text-centered is-6">Input Frames</h2></div>
+      <div class="column"><h2 class="subtitle has-text-centered is-6">Monocular Depth</h2></div>
+      <div class="column"><h2 class="subtitle has-text-centered is-6">Rigid Flow</h2></div>
+      <div class="column"><h2 class="subtitle has-text-centered is-6">Independent Flow</h2></div>
+      <div class="column"><h2 class="subtitle has-text-centered is-6">Motion Segmentation</h2></div>
+    </div>
+
+    <h2 class="subtitle has-text-centered">Additional results on nuScenes Dataset.</h2>
+
+  </div>
+</section>
+<!-- Results -->
+
+
+<!-- BibTeX -->
+<section class="section" id="BibTeX">
+  <div class="container">
+    <!-- Abstract -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">BibTeX</h2>
+        <pre><code>@inproceedings{sun2023dynamo,
+  title     = {Fixing Unsupervised Depth Estimation for Dynamical Scenes},
+  author    = {Sun, Yihong and Hariharan, Bharath},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2023}
+}</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- BibTeX -->
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://github.com/dynamo-depth/dynamo-depth.github.io" target="_blank" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            This website is borrowed from <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Footer -->
+
+
+</body>
+</html>
+
