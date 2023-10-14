@@ -134,11 +134,14 @@
 <section class="hero teaser">
   <div class="container"> 
     <div class="hero-body">
-      <video id="teaser1" autoplay onclick="this.paused ? this.play() : this.pause(); arguments[0].preventDefault();" muted loop playsinline width="100%"><source src="./static/videos/waymo/segment-12496433400137459534_120_000_140_000.mp4" type="video/mp4">
+      <video id="teaser1" autoplay muted loop playsinline width="100%" poster="static/images/teaser1.png" preload="auto">
+        <source src="./static/videos/waymo/segment-12496433400137459534_120_000_140_000.mp4" type="video/mp4">
       </video>
-      <video id="teaser2" autoplay onclick="this.paused ? this.play() : this.pause(); arguments[0].preventDefault();" muted loop playsinline width="100%"><source src="./static/videos/waymo/segment-11450298750351730790_1431_750_1451_750.mp4" type="video/mp4">
+      <video id="teaser2" autoplay muted loop playsinline width="100%" poster="static/images/teaser2.png" preload="auto">
+        <source src="./static/videos/waymo/segment-11450298750351730790_1431_750_1451_750.mp4" type="video/mp4">
       </video>
-      <video id="teaser3" autoplay onclick="this.paused ? this.play() : this.pause(); arguments[0].preventDefault();" muted loop playsinline width="100%"><source src="./static/videos/waymo/segment-7932945205197754811_780_000_800_000.mp4" type="video/mp4">
+      <video id="teaser3" autoplay muted loop playsinline width="100%" poster="static/images/teaser3.png" preload="auto">
+        <source src="./static/videos/waymo/segment-7932945205197754811_780_000_800_000.mp4" type="video/mp4">
       </video>
       <img class="labels" src="./static/images/labels.png">
       <h2 class="subtitle has-text-centered">Dynamo learns from unlabeled video sequences and predicts monocular depth, rigid flow, independent flow, and motion segmentation.</h2>
