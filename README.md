@@ -1,11 +1,11 @@
-# Fixing Unsupervised Depth Estimation for Dynamical Scenes
+# Dynamo-Depth: Fixing Unsupervised Depth Estimation for Dynamical Scenes
 
 This is the repository that contains source code for the [Dyanmo-Depth website](https://dynamo-depth.github.io).
 
 If you find our work useful please cite:
 <pre>
 @inproceedings{sun2023dynamodepth,
-  title     = {Fixing Unsupervised Depth Estimation for Dynamical Scenes},
+  title     = {Dynamo-Depth: Fixing Unsupervised Depth Estimation for Dynamical Scenes},
   author    = {Sun, Yihong and Hariharan, Bharath},
   booktitle = {Advances in Neural Information Processing Systems},
   year      = {2023}
