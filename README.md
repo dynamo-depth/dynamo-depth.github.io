@@ -4,10 +4,10 @@ This is the repository that contains source code for the [Dyanmo-Depth website](
 
 If you find our work useful please cite:
 <pre>
-@article{sun2023dynamo,
+@inproceedings{sun2023dynamodepth,
   title={Dynamo-Depth: Fixing Unsupervised Depth Estimation for Dynamical Scenes},
-  author={Sun, Yihong and Hariharan, Bharath},
-  journal={arXiv preprint arXiv:2310.18887},
+  author={Yihong Sun and Bharath Hariharan},
+  booktitle={Thirty-seventh Conference on Neural Information Processing Systems},
   year={2023}
 }
 </pre>
