@@ -66,6 +66,40 @@
 </head>
 <body>
 
+<!-- Navigation Bar -->
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://yihongsun.github.io">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://dynamo-depth.github.io">
+            Dynamo-Depth
+          </a>
+          <a class="navbar-item" href="https://mod-uv.github.io">
+            MOD-UV
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- Navigation Bar -->
+
 <!-- Title/Authors/Institutions/Links -->
 <section class="hero">
   <div class="hero-body">
@@ -217,89 +251,82 @@
       </div>
     </div>
     <!--/ Paper video -->
+
+    &nbsp;
+
+    <!-- Qualitative -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Qualitative Results</h2>
+
+        <video id="waymo1" controls autoplay muted loop playsinline width="100%">
+          <source src="./static/videos/waymo/segment-4575389405178805994_4900_000_4920_000.mp4" type="video/mp4">
+        </video>
+        <video id="waymo2" controls autoplay muted loop playsinline width="100%">
+          <source src="./static/videos/waymo/segment-8506432817378693815_4860_000_4880_000.mp4" type="video/mp4">
+        </video>
+        <video id="waymo3" controls autoplay muted loop playsinline width="100%">
+          <source src="./static/videos/waymo/segment-1943605865180232897_680_000_700_000.mp4" type="video/mp4">
+        </video>
+        <video id="waymo4" controls autoplay muted loop playsinline width="100%">
+          <source src="./static/videos/waymo/segment-8137195482049459160_3100_000_3120_000.mp4" type="video/mp4">
+        </video>
+        <video id="waymo5" controls autoplay muted loop playsinline width="100%">
+          <source src="./static/videos/waymo/segment-30779396576054160_1880_000_1900_000.mp4" type="video/mp4">
+        </video>
+        <video id="waymo6" controls autoplay muted loop playsinline width="100%">
+          <source src="./static/videos/waymo/segment-16751706457322889693_4475_240_4495_240.mp4" type="video/mp4">
+        </video>
+        <img class="labels" src="./static/images/labels.png">
+        <h2 class="subtitle has-text-centered">Additional results on Waymo Open Dataset.</h2>
+    
+        <div style="margin-bottom: 70px;"></div>
+    
+        <video id="nuscenes1" controls autoplay muted loop playsinline width="100%">
+          <source src="./static/videos/nuscenes/scene-0099.mp4" type="video/mp4">
+        </video>
+        <video id="nuscenes2" controls autoplay muted loop playsinline width="100%">
+          <source src="./static/videos/nuscenes/scene-0104.mp4" type="video/mp4">
+        </video>
+        <video id="nuscenes3" controls autoplay muted loop playsinline width="100%">
+          <source src="./static/videos/nuscenes/scene-0556.mp4" type="video/mp4">
+        </video>
+        <video id="nuscenes4" controls autoplay muted loop playsinline width="100%">
+          <source src="./static/videos/nuscenes/scene-0521.mp4" type="video/mp4">
+        </video>
+        <video id="nuscenes5" controls autoplay muted loop playsinline width="100%">
+          <source src="./static/videos/nuscenes/scene-0794.mp4" type="video/mp4">
+        </video>
+        <video id="nuscenes6" controls autoplay muted loop playsinline width="100%">
+          <source src="./static/videos/nuscenes/scene-0553.mp4" type="video/mp4">
+        </video>
+        <img class="labels" src="./static/images/labels.png">
+        <h2 class="subtitle has-text-centered">Additional results on nuScenes Dataset.</h2>
+
+      </div>
+    </div>
+    <!--/ Qualitative -->
+
+    &nbsp;
+
+    <!-- Limitation -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Limitations</h2>
+        
+        <video id="waymo3" controls autoplay muted loop playsinline width="100%">
+          <source src="./static/videos/waymo/segment-1457696187335927618_595_027_615_027.mp4" type="video/mp4">
+        </video>
+        <img class="labels" src="./static/images/labels.png">
+        <h2 class="subtitle has-text-centered"> Object shadows are modeled as independently moving on the ground.</h2>
+
+      </div>
+    </div>
+    <!--/ Limitation -->
+
   </div>
 </section>
 <!-- Main Body -->
-
-
-<!-- Results -->
-<section class="section">
-  <div class="container"> 
-    <div class="hero-body">
-      <div class="column is-centered has-text-centered">
-        <h2 class="title is-3">Qualitative Results </h2>
-      </div>
-    </div>
-
-    <video id="waymo1" controls autoplay muted loop playsinline width="100%">
-      <source src="./static/videos/waymo/segment-4575389405178805994_4900_000_4920_000.mp4" type="video/mp4">
-    </video>
-    <video id="waymo2" controls autoplay muted loop playsinline width="100%">
-      <source src="./static/videos/waymo/segment-8506432817378693815_4860_000_4880_000.mp4" type="video/mp4">
-    </video>
-    <video id="waymo3" controls autoplay muted loop playsinline width="100%">
-      <source src="./static/videos/waymo/segment-1943605865180232897_680_000_700_000.mp4" type="video/mp4">
-    </video>
-    <video id="waymo4" controls autoplay muted loop playsinline width="100%">
-      <source src="./static/videos/waymo/segment-8137195482049459160_3100_000_3120_000.mp4" type="video/mp4">
-    </video>
-    <video id="waymo5" controls autoplay muted loop playsinline width="100%">
-      <source src="./static/videos/waymo/segment-30779396576054160_1880_000_1900_000.mp4" type="video/mp4">
-    </video>
-    <video id="waymo6" controls autoplay muted loop playsinline width="100%">
-      <source src="./static/videos/waymo/segment-16751706457322889693_4475_240_4495_240.mp4" type="video/mp4">
-    </video>
-    <img class="labels" src="./static/images/labels.png">
-    <h2 class="subtitle has-text-centered">Additional results on Waymo Open Dataset.</h2>
-
-    <div style="margin-bottom: 70px;"></div>
-
-    <video id="nuscenes1" controls autoplay muted loop playsinline width="100%">
-      <source src="./static/videos/nuscenes/scene-0099.mp4" type="video/mp4">
-    </video>
-    <video id="nuscenes2" controls autoplay muted loop playsinline width="100%">
-      <source src="./static/videos/nuscenes/scene-0104.mp4" type="video/mp4">
-    </video>
-    <video id="nuscenes3" controls autoplay muted loop playsinline width="100%">
-      <source src="./static/videos/nuscenes/scene-0556.mp4" type="video/mp4">
-    </video>
-    <video id="nuscenes4" controls autoplay muted loop playsinline width="100%">
-      <source src="./static/videos/nuscenes/scene-0521.mp4" type="video/mp4">
-    </video>
-    <video id="nuscenes5" controls autoplay muted loop playsinline width="100%">
-      <source src="./static/videos/nuscenes/scene-0794.mp4" type="video/mp4">
-    </video>
-    <video id="nuscenes6" controls autoplay muted loop playsinline width="100%">
-      <source src="./static/videos/nuscenes/scene-0553.mp4" type="video/mp4">
-    </video>
-    <img class="labels" src="./static/images/labels.png">
-    <h2 class="subtitle has-text-centered">Additional results on nuScenes Dataset.</h2>
-
-  </div>
-</section>
-<!-- Results -->
-
-
-<!-- Limitations -->
-<section class="section">
-  <div class="container"> 
-    <div class="hero-body">
-      <div class="column is-centered has-text-centered">
-        <h2 class="title is-3">Limitations </h2>
-      </div>
-    </div>
-
-    <video id="waymo3" controls autoplay muted loop playsinline width="100%">
-      <source src="./static/videos/waymo/segment-1457696187335927618_595_027_615_027.mp4" type="video/mp4">
-    </video>
-    <img class="labels" src="./static/images/labels.png">
-    <h2 class="subtitle has-text-centered"> Object shadows are modeled as independently moving on the ground.</h2>
-
-    <div style="margin-bottom: 70px;"></div>
-
-  </div>
-</section>
-<!-- Limitations -->
 
 
 <!-- BibTeX -->
